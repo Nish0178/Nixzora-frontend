@@ -1,15 +1,14 @@
-import CardBannerSlider from "@/components/home/CardBannerSlider";
-import Hero from "@/components/home/Hero";
 import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Navbar from "@/components/layout/Navbar";
-
+import HeroBannerSlider from "@/components/home/HeroBannerSlider";
+import CardBannerSlider from "@/components/home/CardBannerSlider";
 export default function Home() {
   return (
-  <main>
-    <AnnouncementBar />
-    <Navbar />
-    <Hero />
-    <CardBannerSlider />
-  </main>
-);
+     <>
+      <AnnouncementBar />
+      <Navbar />
+      <HeroBannerSlider />
+      <CardBannerSlider />
+    </>
+  );
 }

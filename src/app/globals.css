@@ -11,3 +11,32 @@ body {
 * {
   box-sizing: border-box;
 }
+/* ===========================
+   Swiper Pagination Styles
+=========================== */
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #121212;
+  opacity: 0.25;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heroSwiper .swiper-pagination-bullet {
+  background: #ffffff;
+  opacity: 0.5;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.swiper-pagination-bullet-active {
+  width: 28px !important;
+  border-radius: 4px !important;
+  background: #121212 !important;
+  opacity: 1 !important;
+}
+
+.heroSwiper .swiper-pagination-bullet-active {
+  background: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
