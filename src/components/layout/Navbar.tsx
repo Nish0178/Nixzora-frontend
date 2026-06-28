@@ -1,4 +1,7 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useLoading } from "@/context/LoadingContext";
 import {
   Menu,
   Search,
@@ -8,34 +11,51 @@ import {
 } from "lucide-react";
 
 export default function Navbar() {
+  const router = useRouter();
+const { showLoader, hideLoader } = useLoading();
+
+const handleLogoClick = async () => {
+  showLoader();
+
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  router.push("/");
+
+  hideLoader();
+};
   return (
     <header className="border-b bg-white">
       <div className="mx-auto flex h-16 w-full max-w-[95rem] items-center justify-between px-3 lg:px-4">
 
-        {/* Brand Logo */}
-        <div className="flex items-center">
-          <div className="flex items-center">
-            {/* Mobile Logo */}
-            <Image
-              src="/logo-monogram.png"
-              alt="NIXZORA"
-              width={60}
-              height={60}
-              className="block lg:hidden h-10 w-auto object-contain"
-              priority
-            />
+       {/* Brand Logo */}
+<div className="flex items-center">
+  <button
+  onClick={handleLogoClick}
+  className="flex items-center"
+  type="button"
+>
+    {/* Mobile Logo */}
+    <Image
+      src="/logo-monogram.png"
+      alt="NIXZORA"
+      width={60}
+      height={60}
+      className="block lg:hidden h-10 w-auto object-contain cursor-pointer"
+      priority
+    />
 
-            {/* Desktop Logo */}
-            <Image
-              src="/logo-primary-navbar.png"
-              alt="NIXZORA"
-              width={300}
-              height={80}
-              className="hidden lg:block h-12 w-auto object-contain"
-              priority
-            />
-          </div>
-        </div>
+    {/* Desktop Logo */}
+    <Image
+      src="/logo-primary-navbar.png"
+      alt="NIXZORA"
+      width={300}
+      height={80}
+      className="hidden lg:block h-12 w-auto object-contain cursor-pointer"
+      priority
+    />
+  </button>
+  
+</div>
 
         {/* Mobile Actions */}
         <div className="flex items-center gap-4 lg:hidden">
