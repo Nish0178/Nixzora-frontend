@@ -47,6 +47,12 @@ const banners = [
     href: "/collections/fifa",
     alt: "FIFA World Cup 2026",
   },
+  {
+    desktop: "/banners/desktop/embroidered-collection.jpg",
+    mobile: "/banners/mobile/embroidered-collection.jpg",
+    href: "/collections/embroidered-collection",
+    alt: "embroidered-collection",
+  }
 ];
 
 const SliderNavigation = () => {

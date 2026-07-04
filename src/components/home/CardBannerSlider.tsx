@@ -15,6 +15,11 @@ const cards = [
     href: "/shop/tshirts",
   },
   {
+    desktop: "/cards/desktop/embroidered-collection.jpg",
+    mobile: "/cards/mobile/embroidered-collection.jpg",
+    href: "/shop/embroidered-collection",
+  },
+  {
     desktop: "/cards/desktop/classic-fit.png",
     mobile: "/cards/mobile/classic-fit.png",
     href: "/shop/tshirts",
