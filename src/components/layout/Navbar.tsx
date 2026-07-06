@@ -85,29 +85,34 @@ export default function Navbar() {
         {/* Navigation Actions */}
         <div className="hidden lg:flex items-center gap-10 text-base font-medium">
           {/* Categories */}
-          <div className="flex items-center h-16">
+          <div
+            className="flex items-center h-16"
+            onMouseEnter={() => setIsMenMenuOpen(true)}
+            onMouseLeave={() => setIsMenMenuOpen(false)}
+          >
             <button
               type="button"
               className="hover:text-gray-500 transition"
               aria-haspopup="menu"
               aria-expanded={isMenMenuOpen}
-              onMouseEnter={() => setIsMenMenuOpen(true)}
-              onMouseLeave={() => setIsMenMenuOpen(false)}
               onFocus={() => setIsMenMenuOpen(true)}
               onBlur={() => setIsMenMenuOpen(false)}
             >
               MEN
             </button>
+            <MegaMenu isOpen={isMenMenuOpen} columns={menNavigation} />
           </div>
 
-          <div className="flex items-center h-16">
+          <div
+            className="flex items-center h-16"
+            onMouseEnter={() => setIsWomenMenuOpen(true)}
+            onMouseLeave={() => setIsWomenMenuOpen(false)}
+          >
             <button
               type="button"
               className="hover:text-gray-500 transition"
               aria-haspopup="menu"
               aria-expanded={isWomenMenuOpen}
-              onMouseEnter={() => setIsWomenMenuOpen(true)}
-              onMouseLeave={() => setIsWomenMenuOpen(false)}
               onFocus={() => setIsWomenMenuOpen(true)}
               onBlur={() => setIsWomenMenuOpen(false)}
             >
@@ -116,14 +121,16 @@ export default function Navbar() {
             <MegaMenu isOpen={isWomenMenuOpen} columns={womenNavigation} />
           </div>
 
-          <div className="flex items-center h-16">
+          <div
+            className="flex items-center h-16"
+            onMouseEnter={() => setIsAccessoriesMenuOpen(true)}
+            onMouseLeave={() => setIsAccessoriesMenuOpen(false)}
+          >
             <button
               type="button"
               className="hover:text-gray-500 transition"
               aria-haspopup="menu"
               aria-expanded={isAccessoriesMenuOpen}
-              onMouseEnter={() => setIsAccessoriesMenuOpen(true)}
-              onMouseLeave={() => setIsAccessoriesMenuOpen(false)}
               onFocus={() => setIsAccessoriesMenuOpen(true)}
               onBlur={() => setIsAccessoriesMenuOpen(false)}
             >
@@ -176,9 +183,6 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-
-<MegaMenu isOpen={isMenMenuOpen} columns={menNavigation} />
-
-</header>
+    </header>
   );
 }
