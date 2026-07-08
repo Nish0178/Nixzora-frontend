@@ -1,7 +1,8 @@
+import GenderSwitcher from "@/components/dashboard/GenderSwitcher";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import { GenderProvider } from "@/context/GenderContext";
 import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Navbar from "@/components/layout/Navbar";
 
@@ -35,16 +36,20 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <LoadingProvider>
-          <LoadingWrapper />
+  <GenderProvider>
 
-          <AnnouncementBar />
-          <Navbar />
+    <LoadingWrapper />
 
-          <main className="flex-1">
-            {children}
-          </main>
+   <AnnouncementBar />
+<Navbar />
+<GenderSwitcher />
 
-        </LoadingProvider>
+<main className="flex-1">
+  {children}
+</main>
+
+  </GenderProvider>
+</LoadingProvider>
       </body>
     </html>
   );
